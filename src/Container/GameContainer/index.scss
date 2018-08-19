@@ -1,0 +1,22 @@
+$break-small: 500px;
+$break-large: 900px;
+
+.current-stage-container{
+    margin: auto;
+    display: block;
+    // width: 650px;
+    height: 450px;
+
+    @media screen and (max-width: $break-small) {
+        width: 50vh;
+        height: 300px;
+    }
+    @media screen and (min-width: $break-large) {
+        width: 80vh;
+    }
+}
+
+.index-image{
+    height: 100%;
+    width: 100%;
+}
