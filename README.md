@@ -1,4 +1,5 @@
 Rock Paper Scissor App
+
 After cloning repository
 
 ```sh
