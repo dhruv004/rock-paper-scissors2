@@ -10,7 +10,7 @@ const getWinner = function(firstParam, secondParam) {
   if (firstParam === PAPER && secondParam === SCISSOR) return SCISSOR;
 
   //Scissors as firstParam
-  if (firstParam === SCISSOR && secondParam === PAPER) return PAPER;
+  if (firstParam === SCISSOR && secondParam === PAPER) return SCISSOR;
   if (firstParam === SCISSOR && secondParam === ROCK) return ROCK;
 };
 
