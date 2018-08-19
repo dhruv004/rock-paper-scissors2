@@ -4,14 +4,8 @@ import indexImage from '../../images/index.jpg';
 import PlayButton from '../../Components/play-button/index';
 import UserOptionContainer from '../UserOptionContainer/index';
 import WinnerContainer from '../WinnerContainer/index';
-import {
-  ROCK,
-  PAPER,
-  SCISSOR,
-  NEW_GAME,
-  SELECT_OPTION,
-  SHOW_WINNER
-} from '../../constants';
+import { NEW_GAME, SELECT_OPTION, SHOW_WINNER } from '../../util/constants';
+import { getRandomChoice } from '../../util/commonUtil';
 
 class GameContainer extends Component {
   constructor(props) {
@@ -28,23 +22,14 @@ class GameContainer extends Component {
   };
 
   getComputerOption = () => {
-    var computerChoice = Math.random();
-    if (computerChoice < 0.34) {
-      computerChoice = ROCK;
-    } else if (computerChoice >= 0.34 && computerChoice <= 0.67) {
-      computerChoice = PAPER;
-    } else {
-      computerChoice = SCISSOR;
-    }
-
     this.setState({
-      computerChoice: computerChoice
+      computerChoice: getRandomChoice()
     });
   };
 
-  getUserOption = userChoice => {
+  getUserOption = (userChoice, getRandomChoiceForUser) => {
     this.setState({
-      userChoice: userChoice,
+      userChoice: getRandomChoiceForUser ? getRandomChoice() : userChoice,
       currentStage: SHOW_WINNER
     });
   };

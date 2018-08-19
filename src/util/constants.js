@@ -1,6 +1,7 @@
 export const ROCK = 'ROCK';
 export const PAPER = 'PAPER';
 export const SCISSOR = 'SCISSOR';
+export const BLINDFOLD = 'BLINDFOLD';
 
 //Game States
 export const NEW_GAME = 'NEW_GAME';
